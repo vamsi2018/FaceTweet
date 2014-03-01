@@ -63,9 +63,16 @@ scr.innerText = "function tweetFunction(elem){ extractedText=\" \";"+
 "{console.log(\"shared link file\");extractedText=extractedText+\" \"+q.getElementsByClassName(\"shareLink\")[0].href;}"+
 "if(q.getElementsByClassName(\"_46-i img\")[0] != undefined)"+
 "{console.log(\"image file\");extractedText=extractedText+\" \"+q.getElementsByClassName(\"_46-i img\")[0].src;}"+
-"}else if(q.getElementsByClassName(\"videoThumb\")[0] != undefined)"+
+"}"+
+"if(q.getElementsByClassName(\"profilePicChangePhotoLink\")[0] != undefined)"+
+"{console.log(\"Profile pic found \");profilePicHyperLink = q.getElementsByClassName(\"profilePicChangePhotoLink\")[0];extractedText = extractedText+\" \"+profilePicHyperLink.getElementsByTagName('img')[0].src;"+
+"}"+
+"if(q.getElementsByClassName(\"photo\")[0] != undefined)"+
+"{console.log('photo found');photoHyperLink = q.getElementsByClassName(\"photo\")[0];extractedText = extractedText+' '+photoHyperLink.getElementsByTagName('img')[0].src;"+
+"}"+
+"if(q.getElementsByClassName(\"videoThumb\")[0] != undefined)"+
 "{console.log(\"video file\");extractedText=extractedText+\" \"+q.getElementsByClassName(\"videoThumb\")[0].href;}"+
-"else {extractedText=\" \";};console.log(extractedText);finalUrl = \"http://twitter.com/intent/tweet?related=&text=\"+encodeURIComponent(extractedText);"+
+"console.log(extractedText);finalUrl = \"http://twitter.com/intent/tweet?related=&text=\"+encodeURIComponent(extractedText);"+
 "window.open(finalUrl,\"\",\"width=550,height=420,toolbar=0,menubar=0,location=0,status=0,scrollbars=0,resizable=1,left=100,top=100\");console.log(finalUrl);}";
 document.body.appendChild(scr);
 
