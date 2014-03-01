@@ -69,6 +69,9 @@ scr.innerText = "function tweetFunction(elem){ extractedText=\" \";"+
 "extractedText=q.getElementsByClassName(\"userContent\")[0].innerText;"+
 "if(q.getElementsByClassName(\"videoThumb\")[0] != undefined)"+
 "{console.log(\"video file\");extractedText=extractedText+\" \"+q.getElementsByClassName(\"videoThumb\")[0].href;}"+
+"else if(q.getElementsByClassName(\"uiVideoThumb\")[0] != undefined)"+
+"{console.log(\"Video thumb linkfound \");videothumbHyperLink = q.getElementsByClassName(\"uiVideoThumb\")[0];extractedText = extractedText+\" \"+videothumbHyperLink.getAttribute('ajaxify');"+
+"}"+
 "if(q.getElementsByClassName(\"shareLink\")[0] != undefined)"+
 "{console.log(\"shared link file\");extractedText=extractedText+\" \"+q.getElementsByClassName(\"shareLink\")[0].href;}"+
 "if(q.getElementsByClassName(\"_46-i img\")[0] != undefined)"+
@@ -76,6 +79,12 @@ scr.innerText = "function tweetFunction(elem){ extractedText=\" \";"+
 "}"+
 "if(q.getElementsByClassName(\"profilePicChangePhotoLink\")[0] != undefined)"+
 "{console.log(\"Profile pic found \");profilePicHyperLink = q.getElementsByClassName(\"profilePicChangePhotoLink\")[0];extractedText = extractedText+\" \"+profilePicHyperLink.getElementsByTagName('img')[0].src;"+
+"}"+
+"if(q.getElementsByClassName(\"_5rwn\")[0] != undefined)"+
+"{console.log(\"POst link found \");postHyperLink = q.getElementsByClassName(\"_5rwn\")[0];extractedText = extractedText+\" \"+postHyperLink.href;"+
+"}"+
+"if(q.getElementsByClassName(\"coverPhotoChangeUnit\")[0] != undefined)"+
+"{console.log(\"cover pic link found \");coverpicHyperLink = q.getElementsByClassName(\"coverPhotoChangeUnit\")[0];extractedText = extractedText+\" \"+coverpicHyperLink.getElementsByTagName('img')[0].src;"+
 "}"+
 "if(q.getElementsByClassName(\"photo\")[0] != undefined)"+
 "{console.log('photo found');photoHyperLink = q.getElementsByClassName(\"photo\")[0];extractedText = extractedText+' '+photoHyperLink.getElementsByTagName('img')[0].src;"+
