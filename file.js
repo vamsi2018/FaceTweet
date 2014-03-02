@@ -79,6 +79,8 @@ scr.innerText = "function tweetFunction(elem){ extractedText=\" \";"+
 "else if(u.getElementsByClassName(\"_5pc0 _2-ha _5dec\")[0] != undefined)"+
 "{console.log('updated profile pic found');profilepicHyperLink = u.getElementsByClassName(\"_5pc0 _2-ha _5dec\")[0];extractedText = extractedText+' '+profilepicHyperLink.href;"+
 "}"+
+"if(u.getElementsByClassName(\"scaledImageFitWidth img\")[0] != undefined)"+
+"{console.log(\"only image file\");extractedText=extractedText+\" \"+u.getElementsByClassName(\"scaledImageFitWidth img\")[0].src;}"+
 "if(u.getElementsByClassName(\"profilePicChangePhotoLink\")[0] != undefined)"+
 "{console.log(\"Profile pic found \");profilePicHyperLink = u.getElementsByClassName(\"profilePicChangePhotoLink\")[0];extractedText = extractedText+\" \"+profilePicHyperLink.getElementsByTagName('img')[0].src;"+
 "}"+
@@ -119,6 +121,8 @@ scr.innerText = "function tweetFunction(elem){ extractedText=\" \";"+
 "if(k.getElementsByClassName(\"photo\")[0] != undefined)"+
 "{console.log('photo found');photoHyperLink = k.getElementsByClassName(\"photo\")[0];extractedText = extractedText+' '+photoHyperLink.getElementsByTagName('img')[0].src;"+
 "}"+
+"if(k.getElementsByClassName(\"scaledImageFitWidth img\")[0] != undefined)"+
+"{console.log(\"only image file\");extractedText=extractedText+\" \"+k.getElementsByClassName(\"scaledImageFitWidth img\")[0].src;}"+
 "if(k.getElementsByClassName(\"videoThumb\")[0] != undefined)"+
 "{console.log(\"video file\");extractedText=extractedText+\" \"+k.getElementsByClassName(\"videoThumb\")[0].href;}"+
 "}"+
