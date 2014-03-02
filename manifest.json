@@ -1,9 +1,12 @@
 {
-  "name": "FB to TWITTER and G+",
-  "description": "Share the content on twitter and G+",
+  "name": "FaceTweet",
+  "description": "Share the content on twitter ",
   "version": "1.0",
-  "icons":{
-	"24": "icon_24.jpeg"},
+  "icons" : {
+	"16" : "ft16.png",
+	"64" : "ft64.png",
+	"128" : "ft128.png"
+  },
   "permissions": [
     "activeTab","https://*/*","http://*/*"
   ],
@@ -13,13 +16,13 @@
 				"js": ["file.js"]
 			}
 		],
-	"web_accessible_resources": ["widgets.js"],
   "background": {
     "scripts": ["background.js"],
     "persistent": false
   },
   "browser_action": {
-    "default_title": "Make this page red"
+    "default_icon" : "ft16.png",
+    "default_title": "FaceTweet"
   },
   
   "manifest_version": 2
