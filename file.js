@@ -65,7 +65,7 @@ scr.type="text/javascript";
 scr.innerText = "function tweetFunction(elem){ extractedText=\" \";"+
 "console.log(elem.id); p=document.getElementById(elem.id);"+
 "pare=p.parentElement;q=getSuperParent(pare);console.log(q.getElementsByClassName(\"userContent\")[0]);"+
-"if(q.getElementsByClassName(\"userContent\")[0] != undefined || q.getElementsByClassName(\"userContent\")[0] == \" \" ){ u = q.getElementsByClassName(\"userContent\")[0];console.log(\"Inside text area\");"+
+"if(q.getElementsByClassName(\"userContent\")[0] != undefined || q.getElementsByClassName(\"userContent\")[0] == \" \" ){ u = q.getElementsByClassName(\"userContent\")[0];console.log(\"Inside userContent\");"+
 "extractedText=q.getElementsByClassName(\"userContent\")[0].innerText;"+
 "if(u.getElementsByClassName(\"videoThumb\")[0] != undefined)"+
 "{console.log(\"video file\");extractedText=extractedText+\" \"+u.getElementsByClassName(\"videoThumb\")[0].href;}"+
@@ -76,7 +76,6 @@ scr.innerText = "function tweetFunction(elem){ extractedText=\" \";"+
 "{console.log(\"shared link file\");extractedText=extractedText+\" \"+u.getElementsByClassName(\"shareLink\")[0].href;}"+
 "if(u.getElementsByClassName(\"_46-i img\")[0] != undefined)"+
 "{console.log(\"image file\");extractedText=extractedText+\" \"+u.getElementsByClassName(\"_46-i img\")[0].src;}"+
-"}"+
 "else if(u.getElementsByClassName(\"_5pc0 _2-ha _5dec\")[0] != undefined)"+
 "{console.log('updated profile pic found');profilepicHyperLink = u.getElementsByClassName(\"_5pc0 _2-ha _5dec\")[0];extractedText = extractedText+' '+profilepicHyperLink.href;"+
 "}"+
@@ -94,10 +93,35 @@ scr.innerText = "function tweetFunction(elem){ extractedText=\" \";"+
 "}"+
 "if(u.getElementsByClassName(\"videoThumb\")[0] != undefined)"+
 "{console.log(\"video file\");extractedText=extractedText+\" \"+u.getElementsByClassName(\"videoThumb\")[0].href;}"+
+"}"+
 "if(q.getElementsByClassName(\"_5ys3\")[0] != undefined || q.getElementsByClassName(\"_5ys3\")[0] == \" \" ){ k = q.getElementsByClassName(\"_5ys3\")[0];"+
-"if(k.getElementsByClassName(\"_5pc0 _2-ha _5dec\")[0] != undefined)"+
-"{console.log('updated profile pic found in _5ys3');profilepicHyperLink = k.getElementsByClassName(\"_5pc0 _2-ha _5dec\")[0];extractedText = extractedText+' '+profilepicHyperLink.href;"+
-"}}"+
+"console.log(\"Inside _5ys3 \");if(k.getElementsByClassName(\"videoThumb\")[0] != undefined)"+
+"{console.log(\"video file\");extractedText=extractedText+\" \"+k.getElementsByClassName(\"videoThumb\")[0].href;}"+
+"else if(k.getElementsByClassName(\"uiVideoThumb\")[0] != undefined)"+
+"{console.log(\"Video thumb linkfound \");videothumbHyperLink = k.getElementsByClassName(\"uiVideoThumb\")[0];extractedText = extractedText+\" \"+videothumbHyperLink.getAttribute('ajaxify');"+
+"}"+
+"if(k.getElementsByClassName(\"shareLink\")[0] != undefined)"+
+"{console.log(\"shared link file\");extractedText=extractedText+\" \"+k.getElementsByClassName(\"shareLink\")[0].href;}"+
+"if(k.getElementsByClassName(\"_46-i img\")[0] != undefined)"+
+"{console.log(\"image file\");extractedText=extractedText+\" \"+k.getElementsByClassName(\"_46-i img\")[0].src;}"+
+"else if(k.getElementsByClassName(\"_5pc0 _2-ha _5dec\")[0] != undefined)"+
+"{console.log('updated profile pic found');profilepicHyperLink = k.getElementsByClassName(\"_5pc0 _2-ha _5dec\")[0];extractedText = extractedText+' '+profilepicHyperLink.href;"+
+"}"+
+"if(k.getElementsByClassName(\"profilePicChangePhotoLink\")[0] != undefined)"+
+"{console.log(\"Profile pic found \");profilePicHyperLink = k.getElementsByClassName(\"profilePicChangePhotoLink\")[0];extractedText = extractedText+\" \"+profilePicHyperLink.getElementsByTagName('img')[0].src;"+
+"}"+
+"if(k.getElementsByClassName(\"_5rwn\")[0] != undefined)"+
+"{console.log(\"POst link found \");postHyperLink = k.getElementsByClassName(\"_5rwn\")[0];extractedText = extractedText+\" \"+postHyperLink.href;"+
+"}"+
+"if(k.getElementsByClassName(\"coverPhotoChangeUnit\")[0] != undefined)"+
+"{console.log(\"cover pic link found \");coverpicHyperLink = k.getElementsByClassName(\"coverPhotoChangeUnit\")[0];extractedText = extractedText+\" \"+coverpicHyperLink.getElementsByTagName('img')[0].src;"+
+"}"+
+"if(k.getElementsByClassName(\"photo\")[0] != undefined)"+
+"{console.log('photo found');photoHyperLink = k.getElementsByClassName(\"photo\")[0];extractedText = extractedText+' '+photoHyperLink.getElementsByTagName('img')[0].src;"+
+"}"+
+"if(k.getElementsByClassName(\"videoThumb\")[0] != undefined)"+
+"{console.log(\"video file\");extractedText=extractedText+\" \"+k.getElementsByClassName(\"videoThumb\")[0].href;}"+
+"}"+
 "finalUrl = \"http://twitter.com/intent/tweet?related=&text=\"+encodeURIComponent(extractedText);"+
 "window.open(finalUrl,\"\",\"width=550,height=420,toolbar=0,menubar=0,location=0,status=0,scrollbars=0,resizable=1,left=100,top=100\");}";
 document.body.appendChild(scr);
